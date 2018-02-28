@@ -209,7 +209,7 @@ public:
   ViconReceiver() :
     nh_priv("~"), diag_updater(), min_freq_(0.1), max_freq_(1000),
         freq_status_(diagnostic_updater::FrequencyStatusParam(&min_freq_, &max_freq_)), stream_mode_("ClientPull"),
-        host_name_(""), tf_ref_frame_id_("world"), tracked_frame_suffix_("vicon"),
+        host_name_(""), tf_ref_frame_id_("world"), tracked_frame_suffix_(nh_priv.getNamespace()),
         lastFrameNumber(0), frameCount(0), droppedFrameCount(0), frame_datum(0), n_markers(0), n_unlabeled_markers(0),
         marker_data_enabled(false), unlabeled_marker_data_enabled(false), grab_frames_(false)
 
